@@ -1,7 +1,7 @@
-import React, {Fragment, useContext} from 'react'
+import React, {useContext} from 'react'
 
 import {authContext} from '../../providers/AuthProvider.react'
-import { Nav, Navbar, Button, NavDropdown } from 'react-bootstrap';
+import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 
 import './header.scss'
 

@@ -32,7 +32,7 @@ const MenteeDetails = () => {
         <div className="row">
           <div className="col-sm-3">
             <div className="user-wrap">
-              <div className="profile-pic"><span className="f-badge purple">MNE</span><img src={mentee.picture}/></div>
+              <div className="profile-pic"><span className="f-badge purple">MNE</span><img src={mentee.picture} alt='mentee'/></div>
               <div className="user-name">
                 <h5>
                   <p className="text-muted">{mentee.fullName}</p>

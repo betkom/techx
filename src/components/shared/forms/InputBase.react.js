@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import validate from 'validate.js'
 import FormTypes from './FormTypes'
 
-export default class InputBase extends React.Component {
+export default class InputBase extends React.PureComponent {
   constructor(props) {
     super(props)
     this.setInitialState(props)
@@ -18,10 +18,14 @@ export default class InputBase extends React.Component {
       this.context.setFormValue(this.props.name, this.props.defaultValue)
   }
 
-  componentWillReceiveProps(nextProps) {
+  static getDerivedStateFromProps(props, state) {
     //necessary for forms that change in real time, but re-use components...
-    if (nextProps.name != this.props.name)
-      this.setInitialState(nextProps)
+    if (props.name != state.name) {
+      return {
+        formValue: props.value
+      }
+    }
+    return null
   }
 
   name() {
@@ -58,15 +62,15 @@ export default class InputBase extends React.Component {
   }
 
   errors(name) {
-    var name = name ? name : this.props.name
+    // var name = name ? name : this.props.name
     return this.context.errors().filter(error => error.name === this.props.name)
             .reduce((errors, error) => errors.concat(error.errors), [])
   }
 }
 
 InputBase.contextTypes = FormTypes.contextTypes
-// InputBase.propTypes = {
-//   name: PropTypes.string,
-//   validator: PropTypes.func
-// }
+InputBase.propTypes = {
+  name: PropTypes.string,
+  validator: PropTypes.func
+}
 InputBase.defaultProps = {defaultValue: null, errors: [], required: false, value: null}

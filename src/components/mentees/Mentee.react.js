@@ -7,7 +7,7 @@ const Mentee = ({mentee}) => {
         <div className='user-wrap'>
           <div className='profile-pic'>
             <span className='f-badge'>MNE</span>
-            <img src='https://picsum.photos/200' alt='mentee image'/>
+            <img src='https://picsum.photos/200' alt='mentee-profile'/>
           </div>
           <div className='user-name'>
             <pre><h5>{mentee.lastName} {mentee.firstName}</h5></pre>

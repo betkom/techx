@@ -10,9 +10,6 @@ import Input from './forms/Input.react'
 import Spinner from 'react-bootstrap/Spinner'
 import Upload from './forms/Upload.react'
 
-const storageRef = firebase.storage().ref();
-
-
 const Profile = () => {
   const [profile, setProfile] = useState(null)
   const currentUser = useContext(authContext)
@@ -54,7 +51,7 @@ const Profile = () => {
             <div className="row">
               <div className="col-xs-8 col-xs-offset-2 col-sm-3 col-sm-offset-0">
                 <div className="unit-wrap">
-                  <div className="profile-pic"><img src={profile.photoUrl}/></div>
+                  <div className="profile-pic"><img src={profile.photoUrl} alt='avatar' /></div>
                   <div className="user-name">
                     <h5><a>{profile.fullName}</a></h5>
                   </div>

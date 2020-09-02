@@ -120,7 +120,7 @@ export default class Upload extends InputBase {
       <div className='image-upload'>
         <CurrentImage placeholderImage={this.props.placeholderImage} url={currentUrl} type={this.props.type} />
         <div className='form-group controls'>
-          <div className='change-photo'>{currentUrl ? 'Change file' : 'Upload file'}</div>
+        <div className='change-photo'>{currentUrl ? `Change ${this.props.type}` : `Upload ${this.props.type}`}</div>
           <input className='file-upload-input' onChange={this.handleImage} type='file' />
         </div>
         <div className='remove-photo' onClick={this.removeImage}>{currentUrl ? 'Remove photo' : ''}</div>
