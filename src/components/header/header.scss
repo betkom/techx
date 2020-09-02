@@ -1,0 +1,18 @@
+header {
+  .header-left-content {
+    display: flex;
+    align-items: center;
+  }
+
+  .search-bar {
+      border: none;
+      border-radius: 10px;
+      padding: 1px;
+      margin-right: 10px;
+      font-size: 13.5px;
+  }
+
+  .search-bar:focus {
+    border: 1px solid #cbcbcb;
+  }
+}
