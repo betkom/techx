@@ -15,6 +15,7 @@ const LoginMentor = () => {
             const newUser = {
               lastName: result.additionalUserInfo.profile.family_name || '',
               firstName: result.additionalUserInfo.profile.given_name || '',
+              fullName: `${result.additionalUserInfo.profile.given_name} ${result.additionalUserInfo.profile.family_name}`,
               photoUrl: result.additionalUserInfo.profile.picture || '',
               email: result.additionalUserInfo.profile.email,
               roles: {

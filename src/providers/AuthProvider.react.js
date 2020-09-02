@@ -10,7 +10,7 @@ const AuthProvider = ({value, children}) => {
       const userRef = firebase.database().ref('users').child(userAuth.uid)
         userRef.on('value', (snapshot) => {
           const user = snapshot.val()
-          setCurrentUser(user)
+          setCurrentUser({id: userAuth.uid, ...user})
         })
     });
   },[])

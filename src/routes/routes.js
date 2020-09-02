@@ -9,6 +9,7 @@ import Mentees from '../components/mentees/Mentees.react'
 import Mentors from '../components/mentors/Mentors.react'
 import MenteeDetails from '../components/mentees/MenteeDetails.react'
 import LoginMentor from '../components/auth/LoginMentor.react'
+import Profile from '../components/shared/Profile.react'
 
 
 function AppRoute() {
@@ -29,6 +30,9 @@ function AppRoute() {
         </Route>
         <Route path='/add-mentee'>
           <AddMentee />
+        </Route>
+        <Route path='/profile/edit'>
+          <Profile />
         </Route>
         <Route path="/">
           <Home />

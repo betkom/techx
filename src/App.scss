@@ -22,7 +22,6 @@ body {
     }
 }
 
-
 header {
     z-index: 100;
 }
@@ -202,6 +201,8 @@ a.viewMore{
     padding: 3em 3.6em;
     color: #fff;
     background: #0096ee;
+    margin: 0 62%;
+
     h3 {
         margin: 0 0 1em;
         font-weight: 600;
@@ -723,5 +724,19 @@ input[type="text"]:focus{
     }
     .navbar-nav .open .dropdown-menu a, .navbar-nav .open .dropdown-menu .dropdown-header {
         padding: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 0;
+    }
+
+    .navbar {
+        height: auto;
+    }
+
+    .caption {
+        margin: 0 auto;
     }
 }

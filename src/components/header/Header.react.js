@@ -9,7 +9,7 @@ const Header = () => {
   const currentUser = useContext(authContext)
   console.log(currentUser, 'currentUser')
   return (
-    <header className="App-header">
+    <header className="app-header">
       <Navbar bg="light" expand="lg">
         <div className='container'>
           <div className='header-left-content'>
@@ -31,7 +31,7 @@ const Header = () => {
         <div className='authState'>
           <img className='displayPhoto' src={currentUser.photoUrl} />
           <NavDropdown title={currentUser.firstName} id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.2">My Profile</NavDropdown.Item>
+            <NavDropdown.Item href="profile/edit">My Profile</NavDropdown.Item>
             <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
             <NavDropdown.Divider />
             <NavDropdown.Item href="#action/3.4">Logout</NavDropdown.Item>

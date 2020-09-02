@@ -1,4 +1,10 @@
 header {
+  position: sticky;
+  top: 0;
+
+  .navbar {
+    position: unset;
+  }  
   .header-left-content {
     display: flex;
     align-items: center;
