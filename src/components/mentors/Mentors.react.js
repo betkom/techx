@@ -9,11 +9,15 @@ const Mentors = () => {
 
   useEffect(() => {
     setLoadingMentors(true)
+    getMentors()
+  }, [])
+
+
+  const getMentors = () => {
     const mentorsRef = firebase.database().ref('users').orderByChild('roles/mentor').equalTo(true);
     mentorsRef.on('value', (snapshot) => {
       const mentors = snapshot.val();
       let newState = [];
-      console.log(mentors, 'mentors')
       for (let mentor in mentors) {
         newState.push({
           id: mentor,
@@ -21,29 +25,11 @@ const Mentors = () => {
           firstName: mentors[mentor].lastName
         });
       }
+
       setMentors(newState)
       setLoadingMentors(false)
     })
-  }, [])
-
-
-  // const getMentors = () => {
-  //   const mentorsRef = firebase.database().ref('users').orderByChild('roles/mentor').equalTo(true);
-  //   mentorsRef.on('value', (snapshot) => {
-  //     const mentors = snapshot.val();
-  //     let newState = [];
-  //     for (let mentor in mentors) {
-  //       newState.push({
-  //         id: mentor,
-  //         lastName: mentors[mentor].firstName,
-  //         firstName: mentors[mentor].lastName
-  //       });
-  //     }
-      
-  //     setMentors(newState)
-  //     setLoadingMentors(false)
-  //   })
-  // }
+  }
 
   if (loadingMentors)
     return <div>...loading</div>
