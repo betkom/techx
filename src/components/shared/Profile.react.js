@@ -119,16 +119,13 @@ const Profile = () => {
                     <Upload defaultValue={profile.videoUrl} name="videoUrl" type='video' />
                     <video src={profile.videoURL} height="200" width="300" controls="controls" />
                     {/*<p data-ng-if="changeSize">video too large or invalid format, please change video   </p>*/}
-                    {/*<p data-ng-if="fileLoading">
-                      Uploading video file, please wait....
-                      <md-progress-linear md-mode="indeterminate"></md-progress-linear>
-                    </p>*/}
-                    {/*<video ng-if="uploadedResult" data-ng-src="{{scePermit(uploadedResult)}}" height="200" width="300" controls="controls"></video>*/}
                   </div>
+                </div>
+                <div className="col-md-4 col-md-offset-8">
+                  <button onClick={updateProfile} className="btn btn-primary btn-block">Save</button>
                 </div>
               </div>
             </div>
-            <button onClick={updateProfile}>Save</button>
           </Form>
         </div>
       </section>

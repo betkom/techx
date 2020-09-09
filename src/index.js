@@ -9,11 +9,9 @@ import * as serviceWorker from './serviceWorker';
 import 'bootstrap/dist/js/bootstrap.bundle.min'
 
 ReactDOM.render(
-  <BrowserRouter>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </BrowserRouter>,
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
   document.getElementById('root')
 );
 

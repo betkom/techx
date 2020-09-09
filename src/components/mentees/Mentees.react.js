@@ -4,8 +4,10 @@ import Mentee from './Mentee.react'
 
 const Mentees = () => {
   const [mentees, setMentees] = useState([])
+  const [loadingMentees, setLoadingMentees] = useState(false)
 
   useEffect(() => {
+    setLoadingMentees(true)
     const menteesRef = firebase.database().ref('users').orderByChild('roles/fellow').equalTo(true);
     menteesRef.on('value', (snapshot) => {
       const mentees = snapshot.val();
@@ -19,8 +21,12 @@ const Mentees = () => {
         });
       }
       setMentees(newState)
+      setLoadingMentees(false)
     })
   }, [])
+
+  if (loadingMentees)
+    return <div>...loading</div>
   return (
     <div className='container'>
       <h3>Mentees</h3>

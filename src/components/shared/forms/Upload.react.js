@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import InputBase from './InputBase.react'
 import firebase from '../../../firebase.js'
+import ProgressBar from 'react-bootstrap/ProgressBar'
 
 
 const storageRef = firebase.storage().ref();
@@ -123,6 +124,10 @@ export default class Upload extends InputBase {
         <div className='change-photo'>{currentUrl ? `Change ${this.props.type}` : `Upload ${this.props.type}`}</div>
           <input className='file-upload-input' onChange={this.handleImage} type='file' />
         </div>
+        {this.state.progress && <p>
+          Uploading video file, please wait....
+          <ProgressBar now={this.state.progress} label={`${this.state.progress}%`} srOnly />
+        </p>}
         <div className='remove-photo' onClick={this.removeImage}>{currentUrl ? 'Remove photo' : ''}</div>
         <div className='form-errors'>{this.state.errors}</div>
       </div>

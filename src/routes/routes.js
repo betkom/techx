@@ -1,7 +1,8 @@
 import React from 'react'
 import {
   Switch,
-  Route
+  Route,
+  BrowserRouter
 } from "react-router-dom"
 import Home from '../components/home/Home.react'
 import AddMentee from '../components/mentees/AddMentee.react'
@@ -14,7 +15,7 @@ import Profile from '../components/shared/Profile.react'
 
 function AppRoute() {
   return (
-    <div>
+    <BrowserRouter>
       <Switch>
         <Route path='/login/mentor'>
           <LoginMentor />
@@ -38,7 +39,7 @@ function AppRoute() {
           <Home />
         </Route>
       </Switch>
-    </div>
+    </BrowserRouter>
   )
 }
 
